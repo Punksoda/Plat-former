@@ -3,12 +3,7 @@ guid: 564a4c6b1305e8043a9fad6e4fe6188e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Chill Guy
-    second: {fileID: 2100000, guid: ff2feb21a513add49bfa419052876465, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
