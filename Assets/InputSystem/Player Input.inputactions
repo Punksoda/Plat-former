@@ -2,7 +2,7 @@
     "name": "Player Input",
     "maps": [
         {
-            "name": "New action map",
+            "name": "Player",
             "id": "ac3ab576-6901-4f40-bded-ae4fc0ab391f",
             "actions": [
                 {
@@ -21,7 +21,7 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Look",
