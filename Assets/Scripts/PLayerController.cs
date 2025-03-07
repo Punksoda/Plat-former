@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -60,7 +61,6 @@ public class PlayerController : MonoBehaviour
         if(context.phase == InputActionPhase.Started && IsGrounded())
         {
             rigid.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
-            Debug.Log("점프!");
         }
     }
     private void Move()
@@ -92,12 +92,20 @@ public class PlayerController : MonoBehaviour
 
         for(int i = 0; i < rays.Length; i++)
         {
-            if (Physics.Raycast(rays[i], 0.1f, groundCheck))
+            if (Physics.Raycast(rays[i], 1.6f, groundCheck)) // 트랜스폼 위치에 따른 레이값 변경
             {
+                Debug.Log("그라운드 쳌");
                 return true;
             }
         }
 
         return false;
     }
+
+    private void OnDrawGizmos()
+    {
+        Debug.DrawRay(transform.position, Vector2.down * 2f, Color.magenta);
+    }
+
+    
 }
