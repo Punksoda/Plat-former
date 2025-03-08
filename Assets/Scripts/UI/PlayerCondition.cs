@@ -8,6 +8,6 @@ public class PlayerCondition : MonoBehaviour
 
     private void Update()
     {
-        health.Add(health.passiveValue * Time.deltaTime);
+        health.Decrease(health.passiveValue * Time.deltaTime);
     }
 }

@@ -32,6 +32,6 @@ public class Condition : MonoBehaviour
 
     public void Decrease(float value)
     {
-        curValue -= Mathf.Max(curValue - value, 0);
+        curValue -= Mathf.Max(curValue - value, 0.0f);
     }
 }
