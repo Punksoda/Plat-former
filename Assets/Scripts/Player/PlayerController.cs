@@ -107,5 +107,4 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(transform.position, Vector2.down * 2f, Color.magenta);
     }
 
-    
 }

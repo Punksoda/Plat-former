@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public interface IIteractable
 {
@@ -9,7 +8,6 @@ public interface IIteractable
 public class ItemObject : MonoBehaviour, IIteractable
 {
     public ItemData data;
-
     public string GetInteractPrompt()
     {
         string str = $"{data.displayName}\n{data.description}";
@@ -22,5 +20,4 @@ public class ItemObject : MonoBehaviour, IIteractable
         CharacterManager.Instance.Player.addItem?.Invoke();
         Destroy(gameObject);
     }
-   
 }
