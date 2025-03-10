@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item_Bottle
   m_EditorClassIdentifier: 
   displayName: Bottle
-  description: U can drinkl and add Hp
+  description: U can drink and add Hp
   type: 2
   icon: {fileID: 0}
   dropPrefab: {fileID: 0}
