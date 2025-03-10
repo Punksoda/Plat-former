@@ -27,11 +27,13 @@ public class Condition : MonoBehaviour
 
     public void Add(float value)
     {
-        curValue += Mathf.Min(curValue + value, maxValue);
+        Debug.Log("체력증가!");
+        curValue = Mathf.Min(curValue + value, maxValue);
     }
 
     public void Decrease(float value)
     {
-        curValue -= Mathf.Max(curValue - value, 0.0f);
+        Debug.Log("체력감소!");
+        curValue = Mathf.Max(curValue - value, 0.0f);
     }
 }
