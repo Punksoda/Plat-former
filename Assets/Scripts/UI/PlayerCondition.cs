@@ -16,12 +16,15 @@ public class PlayerCondition : MonoBehaviour, IDamagable, IHealable
 
     public UICondition uiCondition;
     public event Action onTakeDamage;
+    public event Action onHeal;
+
     Condition health { get { return uiCondition.health; } }
     Condition special { get { return uiCondition.special; } }
  
   public void Heal(int healAmount) // UI에서 해당 회복양만큼의 상호작용 실행
     {
         health.Add(healAmount); 
+        onHeal?.Invoke();
     }
 
     public void TakePhysicalDamage(int damageAmount) // UI에서 해당 피해만큼의 상호작용 실행 후, 다시 초기화
