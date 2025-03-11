@@ -23,7 +23,8 @@ public class PlayerCondition : MonoBehaviour, IDamagable, IHealable
  
   public void Heal(int healAmount) // UI에서 해당 회복양만큼의 상호작용 실행
     {
-        health.Add(healAmount); 
+       
+       health.Add(healAmount); 
         onHeal?.Invoke();
     }
 

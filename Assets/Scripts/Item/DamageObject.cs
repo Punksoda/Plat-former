@@ -5,11 +5,13 @@ public class DamageObject : MonoBehaviour
 {
     public int damage; // 데미지 양
     public float damageTime; // 지속적으로 데미지를 받는 기준 시간
+    AudioSource source;
 
     List<IDamagable> damagethings  = new List<IDamagable>(); // 리스트에 데미지를 받는 오브젝트를 미리 저장
 
     void Start()
     {
+        source = GetComponent<AudioSource>();
         InvokeRepeating("DealDamage", 0f, damageTime); // IvokeReapeating을 사용해, 반복시간을 지정한 뒤, 기준시간마다 초기화하여 반복함
     }
 
@@ -18,6 +20,7 @@ public class DamageObject : MonoBehaviour
         for (int i = 0; i < damagethings.Count; i++)
         {
             damagethings[i].TakePhysicalDamage(damage); // 데미지를 주는 오브젝트를 받아와서 UI 상태창을 변경받는 함수 호출
+            source.Play();
         }
     }
 

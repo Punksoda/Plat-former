@@ -4,6 +4,12 @@ public class JumpObject : MonoBehaviour
 {
     public PlayerController player;
     public float jumpF = 5f;
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -11,6 +17,7 @@ public class JumpObject : MonoBehaviour
         if (rb != null)
         {
             rb.AddForce(Vector3.up * jumpF, ForceMode.Impulse); // 위로 그 만큼 곱해서 순간적으로 힘 방출
+            audioSource.Play();
         }
         else
         {

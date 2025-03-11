@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerDamage : MonoBehaviour
+public class PlayerColor : MonoBehaviour
 {
     public Renderer playerRenderer; // 플레이어의 Renderer 컴포넌트
     public float flashSpeed = 1f;   // 깜빡이는 속도
@@ -10,14 +10,17 @@ public class PlayerDamage : MonoBehaviour
     private Color originalColor;     // 원래 색상을 저장
     private Coroutine coroutine;    // 코루틴 호출
 
+    
+
     private void Start()
     {
         playerMaterial = playerRenderer.material; // 플레이어 머테리얼 가져오기
         originalColor = playerMaterial.color; // 원래 색상 저장
 
+
         // 데미지 이벤트에 Flash 메서드 연결
-        CharacterManager.Instance.Player.condition.onTakeDamage += () => Flash(Color.red);
-        CharacterManager.Instance.Player.condition.onHeal += () =>Flash(Color.green);
+        CharacterManager.Instance.Player.condition.onTakeDamage += FlashRed;
+        CharacterManager.Instance.Player.condition.onHeal += FlashGreen;
     }
 
     public void Flash(Color flashColor)
@@ -28,6 +31,16 @@ public class PlayerDamage : MonoBehaviour
         }
 
         coroutine = StartCoroutine(ColorEffect(flashColor));
+    }
+
+    private void FlashRed()
+    {
+        Flash(Color.red);  
+    }
+
+    private void FlashGreen()
+    {
+        Flash(Color.green);
     }
 
 

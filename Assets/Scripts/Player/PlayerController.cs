@@ -18,9 +18,12 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rigid; // 리지드 바디 
 
+    AudioSource audioSource;
+
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -48,6 +51,7 @@ public class PlayerController : MonoBehaviour
         if(context.phase == InputActionPhase.Performed)
         {
             curMoveInput = context.ReadValue<Vector2>();
+            audioSource.Play();
         }
         else if(context.phase == InputActionPhase.Canceled)
         {
