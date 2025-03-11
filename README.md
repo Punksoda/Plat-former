@@ -5,7 +5,7 @@
 
 
 1. 기본이동 및 점프
-`WASD`로 앞,뒤,좌,우 이동, `spacebar`로 점프 (InputSystem 이용)
+`W` `A` `S` `D`로 앞,뒤,좌,우 이동, `spacebar`로 점프 (InputSystem 이용)
 
 2. 체력바 UI 구현, 아이템들과 상호작용함! (UI, Action 이용)
 
