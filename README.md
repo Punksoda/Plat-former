@@ -1,5 +1,8 @@
-# Plat-former
+#  ![Icon (1)](https://github.com/user-attachments/assets/420b2178-d696-4c1a-95fe-b964e5b5fbfa) Plat - Former
+
+
 개인주차 플랫폼 환경 구현하기
+
 
 1. 기본이동 및 점프
 `WASD`로 앞,뒤,좌,우 이동, `spacebar`로 점프 (InputSystem 이용)
